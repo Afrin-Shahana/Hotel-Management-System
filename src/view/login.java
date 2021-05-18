@@ -3,8 +3,8 @@ package view;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showConfirmDialog;
 import java.sql.*;
-import project.InsertUpdateDelete;
-import project.select;
+import model.InsertUpdateDelete;
+import model.select;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

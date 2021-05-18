@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showConfirmDialog;
-import project.InsertUpdateDelete;
+import model.InsertUpdateDelete;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

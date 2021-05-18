@@ -3,19 +3,33 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Hotel%20Management%20System/src/view/CustomerCheckIn.java</file>
             <file>file:/D:/Hotel%20Management%20System/src/view/AdminHome.java</file>
             <file>file:/D:/Hotel%20Management%20System/src/view/ForgotPassword.java</file>
             <file>file:/D:/Hotel%20Management%20System/src/view/home.java</file>
-            <file>file:/D:/Hotel%20Management%20System/src/project/select.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/controller/ForgotPasswordControllerTest.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/controller/signupContrrollerTest.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/controller/manageRoomControllerTest.java</file>
+            <file>file:/D:/Hotel%20Management%20System/src/model/ConnectionProvider.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/model/ConnectionProviderTest.java</file>
+            <file>file:/D:/Hotel%20Management%20System/src/controller/signupController.java</file>
+            <file>file:/D:/Hotel%20Management%20System/src/model/tables.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/model/InsertUpdateDeleteTest.java</file>
+            <file>file:/D:/Hotel%20Management%20System/src/controller/CustomerCheckInController.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/model/selectTest.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/controller/homeControllerTest.java</file>
+            <file>file:/D:/Hotel%20Management%20System/src/view/CustomerCheckIn.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/controller/CustomerCheckOutControllerTest.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/model/tablesTest.java</file>
             <file>file:/D:/Hotel%20Management%20System/src/view/signup.java</file>
             <file>file:/D:/Hotel%20Management%20System/src/view/manageRoom.java</file>
+            <file>file:/D:/Hotel%20Management%20System/src/controller/AdminHomeController.java</file>
             <file>file:/D:/Hotel%20Management%20System/src/view/login.java</file>
-            <file>file:/D:/Hotel%20Management%20System/src/project/tables.java</file>
+            <file>file:/D:/Hotel%20Management%20System/src/model/select.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/controller/CustomerCheckInControllerTest.java</file>
+            <file>file:/D:/Hotel%20Management%20System/src/model/InsertUpdateDelete.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/controller/AdminHomeControllerTest.java</file>
             <file>file:/D:/Hotel%20Management%20System/src/view/CustomerCheckOut.java</file>
-            <file>file:/D:/Hotel%20Management%20System/src/hotel/management/system/HotelManagementSystem.java</file>
-            <file>file:/D:/Hotel%20Management%20System/src/project/InsertUpdateDelete.java</file>
-            <file>file:/D:/Hotel%20Management%20System/src/project/ConnectionProvider.java</file>
+            <file>file:/D:/Hotel%20Management%20System/test/controller/loginControllerTest.java</file>
         </group>
     </open-files>
 </project-private>

@@ -6,7 +6,6 @@
 package view;
 
 import javax.swing.JOptionPane;
-import project.*;
 import java.sql.*;
 
 /**

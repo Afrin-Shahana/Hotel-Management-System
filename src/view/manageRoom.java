@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package view;
+import model.select;
+import model.InsertUpdateDelete;
 import javax.swing.JOptionPane;
-import project.*;
 import java.sql.*;
 import javax.swing.table.DefaultTableModel;
 /**

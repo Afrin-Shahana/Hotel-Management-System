@@ -5,12 +5,15 @@
  */
 package view;
 
+import model.select;
+import controller.CustomerCheckInController;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import static javax.print.attribute.Size2DSyntax.MM;
 import javax.swing.JOptionPane;
 import java.sql.*;
-import project.*;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 /**
  *
@@ -237,78 +240,34 @@ public class CustomerCheckIn extends javax.swing.JFrame {
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
-        roomDetails();
+        CustomerCheckInController.roomDetails(jComboBox4,jTextField8,jComboBox2,jComboBox3);
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
+        CustomerCheckInController.jButton1ActionPerformed(evt, this);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
-        new CustomerCheckIn().setVisible(true);
+        CustomerCheckInController.jButton3ActionPerformed(evt, this);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
-        roomDetails();
-
+        CustomerCheckInController.roomDetails(jComboBox4,jTextField8,jComboBox2,jComboBox3);
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
         // TODO add your handling code here:
-        roomNo = (String) jComboBox4.getSelectedItem();
-        try {
-            ResultSet rs = select.getData("select *from room where roomNo='" + roomNo + "'");
-            while (rs.next()) {
-                jTextField8.setText(rs.getString(4));//price is in 4th position in mysql
-            }
-        } catch (Exception e) {
-
-            JOptionPane.showMessageDialog(null, e);
-        }
+        CustomerCheckInController.jComboBox4ActionPerformed(evt, jComboBox4,jTextField8);
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        int id = 1;
-        String name = jTextField1.getText();
-        String mobileNumber = jTextField2.getText();
-        String nationality = jTextField3.getText();
-        String gender = (String) jComboBox1.getSelectedItem();
-        String email = jTextField4.getText();
-        String idProof = jTextField5.getText();
-        String address = jTextField6.getText();
-        String CheckIn = jTextField7.getText();
-        String bed = (String) jComboBox2.getSelectedItem();
-        String roomType = (String) jComboBox3.getSelectedItem();
-        String roomNO = (String) jComboBox4.getSelectedItem();
-        String pricePerDay = jTextField8.getText();
-        String Query = "select max(id) from customer";
-        try {
-
-            ResultSet rs = select.getData(Query);
-            while (rs.next()) {
-                id = rs.getInt(1);
-            }
-            id = id + 1;
-            //price should not be blank
-            if (!pricePerDay.equals("")) {
-                Query = "update room set status='Booked' where roomNo='" + roomNo + "'";
-                InsertUpdateDelete.setData(Query, ""); // for "" will make msz part is not visible
-                Query = "insert into customer(id,name,mobileNumber,nationality,gender,email,idProof,address,CheckIn,roomNo,bed,roomType,pricePerDay) values(" + id + ",'" + name + "','" + mobileNumber + "','" + nationality + "','" + gender + "','" + email + "','" + idProof + "','" + address + "','" + CheckIn + "','" + roomNo + "','" + bed + "','" + roomType + "','" + pricePerDay + "')";
-                InsertUpdateDelete.setData(Query, "Customer check in successfully");
-                setVisible(false);
-                new CustomerCheckIn().setVisible(true);
-
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-            e.printStackTrace();
-
-        }
+        JTextField[] jtfArr = {jTextField1,jTextField2,jTextField3,jTextField4,jTextField5,jTextField6,jTextField7,jTextField8};
+        JComboBox[] jcbArr = {jComboBox1,jComboBox2,jComboBox3,jComboBox4};
+        CustomerCheckInController.jButton2ActionPerformed(evt, jtfArr, jcbArr, this);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

@@ -5,10 +5,11 @@
  */
 package view;
 
+import model.select;
+import model.InsertUpdateDelete;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showConfirmDialog;
 import java.sql.*;
-import project.*;
 
 /**
  *

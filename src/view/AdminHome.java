@@ -1,10 +1,6 @@
 package view;
 
-import javax.swing.JOptionPane;
-import project.*;
-import java.sql.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
+import controller.AdminHomeController;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -134,97 +130,33 @@ public class AdminHome extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to log out?", "select", JOptionPane.YES_NO_OPTION);
-
-        if (a == 0) {
-            setVisible(false);
-        }
-        new login().setVisible(true);
+        AdminHomeController.jButton1ActionPerformed(evt, this);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to close application?", "select", JOptionPane.YES_NO_OPTION);
-
-        if (a == 0) {
-            System.exit(0);
-        }
+       AdminHomeController.jButton2ActionPerformed(evt);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
-        new AdminHome().setVisible(true);
+        AdminHomeController.jButton4ActionPerformed(evt, this);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here: ResutlSet rs=Select.getData("Select *from users");
-        String nameOrEmail = jTextField1.getText();
-        ResultSet rs = select.getData("Select *from users where name like '%" + nameOrEmail + "%' or email like '%" + nameOrEmail + "%'");
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        model.setRowCount(0);
-        try {
-            while (rs.next()) {
-
-                model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(4), rs.getString(6), rs.getString(7)});
-
-            }
-            rs.close();
-        } catch (Exception e) {
-
-            JOptionPane.showInternalMessageDialog(null, e);
-        }
-
+        AdminHomeController.jButton3ActionPerformed(evt, jTextField1, jTable2);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
         // TODO add your handling code here:
-        int index = jTable2.getSelectedRow();
-        TableModel model = jTable2.getModel();
-        String email = model.getValueAt(index, 1).toString();
-        String status = model.getValueAt(index, 4).toString();
-        if (status.equals("true")) {
-            status = "false";
-        } else {
-            status = "true";
-        }
-        try {
-
-            int a = JOptionPane.showConfirmDialog(null, "Do you want to change status of " + email + "", "select", JOptionPane.YES_NO_OPTION);
-            if (a == 0) {
-
-                InsertUpdateDelete.setData("update users set status='" + status + "' where email='" + email + "';", "status changed successsfully");
-
-                setVisible(false);
-                new AdminHome().setVisible(true);
-
-            }
-        } catch (Exception e) {
-
-            JOptionPane.showInternalMessageDialog(null, e);
-        }
-
+        AdminHomeController.jTable2MouseClicked(evt, jTable2, this);
     }//GEN-LAST:event_jTable2MouseClicked
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
         //public void formComponentShown(java.awt.event.ActionEvent evt){
-        ResultSet rs = select.getData("Select *from users");
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        model.setRowCount(0);
-        try {
-            while (rs.next()) {
-
-                model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(4), rs.getString(6), rs.getString(7),});
-
-            }
-            rs.close();
-        } catch (Exception e) {
-
-            JOptionPane.showInternalMessageDialog(null, e);
-        }
-
-
+        AdminHomeController.formComponentShown(evt, jTable2);
     }//GEN-LAST:event_formComponentShown
 
 /**

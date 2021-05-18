@@ -6,6 +6,8 @@
  */
 
 package view;
+import model.select;
+import model.InsertUpdateDelete;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -13,7 +15,6 @@ import java.io.FileOutputStream;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import project.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.io.File;
